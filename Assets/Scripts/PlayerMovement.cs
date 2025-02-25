@@ -4,39 +4,55 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Definere fart og fortelle at det finnes rigid body
-    private float speed = 10f;
-    Rigidbody rb;
-    
-    // Deklarere variabel som er knyttet til PlayerControls (??)
-    private PlayerControls playerInputActions;
+    // Definerer farten til spilleren
 
+    public float speed = 5f;
+
+    // Vektorer for bevegelsesretninger
+    Vector3 forward;
+    Vector3 right;
+
+    // Setter forward til å være kameraets fremoverretning, men ignorerer høyden (y-aksen)
+    // Normaliserer vektoren for jevn bevegelse
     private void Start()
     {
-        // Setter rigid body på spilleren
-        rb = GetComponent<Rigidbody>();
+        forward = Camera.main.transform.forward;
+        forward.y = 0;
+        forward = Vector3.Normalize(forward);
+        
+        // Beregner en høyre-vektor ved å rotere forward 90 grader rundt Y-aksen
+        right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
     }
 
-    // Når spillet kjører skal vi lytte etter inputs og sette dem i variabler
 
+    // Sjekker om en tast trykkes og kaller Move-funksjonen hvis ja
     private void Update()
     {
-        // float xMove = (her trenger vi å lytte etter inputs fra playerInputActions og sette verdien)
-        // float yMove = (her trenger vi å lytte etter inputs fra playerInputActions og sette verdien)
-
+        if (Input.anyKey)
+        {
+            Move();
+        }
     }
 
-    // Når variablene får verdier (via input) skal spilleren flytte seg basert på disse
-    private void OnEnable()
+    // Metode for å håndtere spillerens bevegelse
+    private void Move ()
     {
-        playerInputActions.Enable();
+        // Leser input fra tastaturet for horisontal (A/D piltast) og vertikal (W/S piltast) bevegelse
+        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        Vector3 rightMovement = right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
+
+        Vector3 upMovement = forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
+
+        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+
+        // Roterer spilleren i bevegelsesretningen
+        transform.forward = heading;
+
+        // Flytter spilleren i riktig retning
+        transform.position += rightMovement;
+        transform.position += upMovement;
     }
 
-    // Når input slutter skal spilleren slutte å flytte på seg
-
-    private void OnDisable()
-    {
-        playerInputActions.Disable();
-    }
 
 }
