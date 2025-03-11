@@ -11,6 +11,6 @@ public class FollowCamera : MonoBehaviour
     // Setter kameraets posisjon til å følge spilleren
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(2.1f, 5.38f, 10.69f);
+        transform.position = player.transform.position + new Vector3(4f, 4f, -6.5f);
     }
 }
