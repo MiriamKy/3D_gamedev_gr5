@@ -6,15 +6,37 @@ public class PlayerMovement : MonoBehaviour
 {
     // Definerer farten til spilleren
 
-    public float speed = 5f;
+    [SerializeField] public float speed = 5f;
+
+    private PlayerControls playerInput;
 
     // Vektorer for bevegelsesretninger
     Vector3 forward;
     Vector3 right;
 
+    void Awake()
+    {
+        playerInput = new PlayerControls();
+
+    }
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
+    public void OnMove()
+    {
+        
+    }
+
     // Setter forward til å være kameraets fremoverretning, men ignorerer høyden (y-aksen)
     // Normaliserer vektoren for jevn bevegelse
-    private void Start()
+    void Start()
     {
         forward = Camera.main.transform.forward;
         forward.y = 0;
@@ -26,32 +48,16 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Sjekker om en tast trykkes og kaller Move-funksjonen hvis ja
-    private void Update()
+    void Update()
     {
-        if (Input.anyKey)
-        {
-            Move();
-        }
-    }
+        // Henter input fra bruker, og konverterer dcen til 3 dimensjoner
+        Vector2 xyMove = playerInput.Player.Move.ReadValue<Vector2>();
+        Vector3 movementVector = new Vector3(xyMove.x, 0, xyMove.y);
 
-    // Metode for å håndtere spillerens bevegelse
-    private void Move ()
-    {
-        // Leser input fra tastaturet for horisontal (A/D piltast) og vertikal (W/S piltast) bevegelse
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        // Kobler på transform-komponentet for å kontrollere posisjonen til spilleren via input
+        // Foreløpig raskeste løsning (kan bli behov for å legge til fysikk senere)
+        transform.Translate(movementVector * speed * Time.deltaTime);
 
-        Vector3 rightMovement = right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
-
-        Vector3 upMovement = forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
-
-        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-
-        // Roterer spilleren i bevegelsesretningen
-        transform.forward = heading;
-
-        // Flytter spilleren i riktig retning
-        transform.position += rightMovement;
-        transform.position += upMovement;
     }
 
 
