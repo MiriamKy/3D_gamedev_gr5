@@ -38,12 +38,7 @@ public class PlayerMovement : MonoBehaviour
     // Normaliserer vektoren for jevn bevegelse
     void Start()
     {
-        forward = Camera.main.transform.forward;
-        forward.y = 0;
-        forward = Vector3.Normalize(forward);
         
-        // Beregner en høyre-vektor ved å rotere forward 90 grader rundt Y-aksen
-        right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
     }
 
 
