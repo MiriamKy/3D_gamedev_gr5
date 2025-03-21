@@ -1,23 +1,24 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Definerer farten til spilleren
-
-    [SerializeField] public float speed = 5f;
-
     private PlayerControls playerInput;
+
+    // Definerer farten til spilleren
+    [SerializeField] public float speed = 5f;
 
     // Vektorer for bevegelsesretninger
     Vector3 forward;
     Vector3 right;
 
+    public event Action OnInteractAction;
+
     void Awake()
     {
         playerInput = new PlayerControls();
-
     }
 
     private void OnEnable()
@@ -33,12 +34,17 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
-
-    // Setter forward til å være kameraets fremoverretning, men ignorerer høyden (y-aksen)
-    // Normaliserer vektoren for jevn bevegelse
     void Start()
     {
-        
+        //Setter opp en lytter til et event
+        playerInput.Player.Interact.performed += Interact_performed;
+        Debug.Log(GameManager.Instance.CurrentWaterSeeds());
+    }
+
+    private void Interact_performed(InputAction.CallbackContext obj)
+    {
+        // Trigger den Action som ble laget legner opp og sjekker om noen lytter
+        OnInteractAction?.Invoke();
     }
 
 
