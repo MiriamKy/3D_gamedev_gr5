@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     // Se maks liv spilleren kan ha
 
     // Variabler til de ulike typene frø
-    private bool waterSeed = false;
-    private bool climbSeed = false;
-    private bool bounceSeed = false;
+    private int waterSeed = 0;
+    private int climbSeed = 0;
+    private int bounceSeed = 0;
 
     private void Awake()
     {
@@ -34,18 +34,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Disse metodene legger til frø i climbSeed osv. (ikke helt sikker på om dette er riktig skrevet)
+    public void IncreaseClimbSeed(int amount)
+    {
+        climbSeed += amount;
+    }
+
+    public void IncreaseWaterSeed(int amount)
+    {
+        waterSeed += amount;
+    }
+
+    public void IncreaseJumpSeed(int amount)
+    {
+        bounceSeed += amount;
+    }
+
     // Returnerer variablene for frø for å gjøre dem tilgjengelige overalt
-    public bool CurrentWaterSeeds()
+    public int CurrentWaterSeeds()
     {
         return waterSeed;
     }
 
-    public bool CurrentClimbSeeds()
+    public int CurrentClimbSeeds()
     {
         return climbSeed;
     }
 
-    public bool CurrentJumpSeeds()
+    public int CurrentBounceSeeds()
     {
         return bounceSeed;
     }
