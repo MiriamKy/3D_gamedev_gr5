@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Disse metodene legger til frø i climbSeed osv. (ikke helt sikker på om dette er riktig skrevet)
+    // Disse metodene legger til frø i climbSeed osv.
+    // Husk at det ikke skjer før du kaller metodene/
     public void IncreaseClimbSeed(int amount)
     {
         climbSeed += amount;
