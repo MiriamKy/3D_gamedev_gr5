@@ -18,12 +18,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__oye
-    second: {fileID: 6751252708371454345, guid: cc804ea450621e54cbb37965dc212f6c, type: 3}
+    second: {fileID: 2100000, guid: a4ce86d07850e88448fbd2b50e44ad3c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__standardSurface3
-    second: {fileID: -5139300418478690423, guid: 8b3034f414cd699449375541b0c99407, type: 3}
+    second: {fileID: 2100000, guid: e640436bad94558439ce376dc7e029f6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -33,12 +33,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: skofra_Salma2_pasted__pasted__aiStandardSurface8
-    second: {fileID: 6751252708371454345, guid: cc804ea450621e54cbb37965dc212f6c, type: 3}
+    second: {fileID: 2100000, guid: a4ce86d07850e88448fbd2b50e44ad3c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: skofra_Salma2_pasted__pasted__sho_bu
-    second: {fileID: -5139300418478690423, guid: 3dea47cfc480f2c42b68866939611abb, type: 3}
+    second: {fileID: 2100000, guid: e640436bad94558439ce376dc7e029f6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
