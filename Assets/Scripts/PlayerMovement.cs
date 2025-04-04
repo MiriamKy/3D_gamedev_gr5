@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         // Henter input fra bruker, og konverterer dcen til 3 dimensjoner
         Vector2 xyMove = playerInput.Player.Move.ReadValue<Vector2>();
         Vector3 movementVector = new Vector3(xyMove.x, 0, xyMove.y);
+        
 
         // Kobler på transform-komponentet for å kontrollere posisjonen til spilleren via input
         // Foreløpig raskeste løsning (kan bli behov for å legge til fysikk senere)
