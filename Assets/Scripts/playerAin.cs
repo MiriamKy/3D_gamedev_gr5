@@ -1,24 +1,25 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class playerAin : MonoBehaviour
 {
-    Animation animatior;
+    
     [SerializeField] PlayerMovement player;
-
+    private Animator animator;
     private void Awake()
     {
-        animatior = GetComponent<Animation>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (player.IsWaken() == true)
+        if (player.isWalking() == true)
         {
-            animatior.SetBool("IsWalking", true);
+            animator.SetBool("IsWalking", true);
         }
         else
         {
-            animatior.SetBool("IsWalkg", false);
+            animator.SetBool("IsWalkg", false);
         }
     }
 
