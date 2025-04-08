@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-    public bool isWalking()
+    public bool IsWalking()
     {
         return isWalking;
     }
