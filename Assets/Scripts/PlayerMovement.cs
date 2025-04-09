@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     // Definerer farten til spilleren
     [SerializeField] public float speed = 5f;
 
-    // staret med står i ro
+    // staret med står i ro 
     private bool isWalking = false;
 
     // Vektorer for bevegelsesretninger
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Setter opp en lytter til et event
         playerInput.Player.Interact.performed += Interact_performed;
-        Debug.Log(GameManager.Instance.CurrentWaterSeeds());
+        //Debug.Log(GameManager.Instance.CurrentWaterSeeds());
     }
 
     private void Interact_performed(InputAction.CallbackContext obj)
@@ -58,24 +58,24 @@ public class PlayerMovement : MonoBehaviour
         Vector2 xyMove = playerInput.Player.Move.ReadValue<Vector2>();
         Vector3 movementVector = new Vector3(xyMove.x, 0, xyMove.y);
 
-        // for at careter få animasjon når den går
+        //for at careter få animasjon når den går
         if (movementVector == Vector3.zero)
-        {
-            isWalking = false;
-        }
-        else
-        {
-            isWalking = true;
-        }
+            {
+                isWalking = false;
+            }
+            else
+            {
+                isWalking = true;
+            }
 
-        
+
 
 
         // Kobler på transform-komponentet for å kontrollere posisjonen til spilleren via input
         // Foreløpig raskeste løsning (kan bli behov for å legge til fysikk senere)
         transform.Translate(movementVector * speed * Time.deltaTime);
 
-       
+
     }
 
     public bool IsWalking()

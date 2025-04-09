@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class playerAin : MonoBehaviour
+public class playerAinmaasjon : MonoBehaviour
 {
     
     [SerializeField] PlayerMovement player;
@@ -13,7 +13,7 @@ public class playerAin : MonoBehaviour
 
     private void Update()
     {
-        if (player.isWalking() == true)
+        if (player.IsWalking() == true)
         {
             animator.SetBool("IsWalking", true);
         }
