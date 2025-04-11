@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class playerAinmaasjon : MonoBehaviour
+public class playerAinmasjon : MonoBehaviour
 {
     
     [SerializeField] PlayerMovement player;
+
     private Animator animator;
     private void Awake()
     {
@@ -15,12 +16,14 @@ public class playerAinmaasjon : MonoBehaviour
     {
         if (player.IsWalking() == true)
         {
-            animator.SetBool("IsWalking", true);
+            animator.SetBool("isWalking", true);
         }
         else
         {
-            animator.SetBool("IsWalkg", false);
+            animator.SetBool("isWalking", false);
         }
+
+        
     }
 
 }
