@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     // Variabler til de ulike typene frø
     private int waterSeed = 0;
     private int climbSeed = 0;
-    private int bounceSeed = 0;
 
     private void Awake()
     {
@@ -46,11 +45,6 @@ public class GameManager : MonoBehaviour
         waterSeed += amount;
     }
 
-    public void IncreaseJumpSeed(int amount)
-    {
-        bounceSeed += amount;
-    }
-
     // Returnerer variablene for frø for å gjøre dem tilgjengelige overalt
     public int CurrentWaterSeeds()
     {
@@ -60,10 +54,5 @@ public class GameManager : MonoBehaviour
     public int CurrentClimbSeeds()
     {
         return climbSeed;
-    }
-
-    public int CurrentBounceSeeds()
-    {
-        return bounceSeed;
     }
 }

@@ -3,9 +3,8 @@ using UnityEngine;
 public class SeedDetect : MonoBehaviour
 {
     // Variabler som skal fortelle oss om vi står i nærheten av et frø
-    private bool detectClimbSeed = false;
-    private bool detectWaterSeed = false;
-    private bool detectBounceSeed = false;
+    [SerializeField] private bool detectClimbSeed = false;
+    [SerializeField] private bool detectWaterSeed = false;
 
     private PlayerMovement input;
 
@@ -44,12 +43,6 @@ public class SeedDetect : MonoBehaviour
             detectWaterSeed = true;
             Debug.Log("Water Seed = " + detectWaterSeed);
         }
-        if (other.CompareTag("BounceSeed")) //"BounceSeed" er navnet på taggen, husk å tagge
-        {
-            // Få opp et symbol som sider at du kan plukke (canvas)
-            detectBounceSeed = true;
-            Debug.Log("Bounce seed = " + detectBounceSeed);
-        }
     }
 
     // Setter boolen til false når spilleren går ut av collideren
@@ -65,11 +58,6 @@ public class SeedDetect : MonoBehaviour
             detectWaterSeed = false;
             Debug.Log("Water Seed = " + detectWaterSeed);
         }
-        if (other.CompareTag("BounceSeed"))
-        {
-            detectBounceSeed = false;
-            Debug.Log("Bounce seed = " + detectBounceSeed);
-        }
     }
 
     // Gjøre informasjonen i variabelene tilgjengelig for andre scripts
@@ -80,10 +68,6 @@ public class SeedDetect : MonoBehaviour
     public bool DetectWaterSeed()
     {
         return detectWaterSeed;
-    }
-    public bool DetectBounceSeed()
-    {
-        return detectBounceSeed;
     }
 
 
