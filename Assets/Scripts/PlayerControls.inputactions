@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Klatre",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "c8687423-43d0-4211-8ad4-b58714d9148d",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

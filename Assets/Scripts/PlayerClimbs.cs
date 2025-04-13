@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerClaiming : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class PlayerClaiming : MonoBehaviour
     private bool isclimbing = false;
 
 
-    [SerializeField] public float speed = 5f;
+    [SerializeField] private float speed = 5f;
+
+
+
 
 }
