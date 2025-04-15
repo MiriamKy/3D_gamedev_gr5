@@ -3,31 +3,37 @@ using UnityEngine.InputSystem;
 
 public class PlayerClaiming : MonoBehaviour
 {
-    // betinglsene som skal for gjøer aksen 
+    // betinglsene som skal for gjøer action
     public bool canClimb = false;
     public bool isclimbing = false;
+    [SerializeField] public float clibingSpeed = 5f;
 
+    [SerializeField] GameObject Player;
 
-    //referanse til playerControll InputSystem 
-    public InputActionReference klatre;
-
-    [SerializeField] private PlayerMovement Player;
-
-
-
-    // private PlayerControls playercliming;
-
-    [SerializeField] public float cliingSpeed = 5f;
-
-    private void Start()
+    //referanse til playerControll med PlayerMovement skrifte
+    PlayerMovement playerAction;
+   
+    private void Awake()
     {
-        Player.Klatre
+        playerAction = Player.GetComponent<PlayerMovement>();
+
+
     }
 
 
-    private void Update()
+    private void Start()
+    {
+        //
+        playerAction.OnInteractAction.Klatre.performed += Climbing_Up;
+        Debug.Log()
+    }
+
+
+    private void Climbing_Up(InputAction.CallbackContext obj)
     {
         //aktiver actiom 
+
+        
         if (canClimb == true)
         {
             //gå opp 

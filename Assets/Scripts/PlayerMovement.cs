@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private PlayerControls playerInput;
+    public static PlayerControls playerInput;
 
     // Definerer farten til spilleren
     [SerializeField] public float speed = 5f;
