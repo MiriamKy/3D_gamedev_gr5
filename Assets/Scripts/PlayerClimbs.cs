@@ -5,27 +5,28 @@ public class PlayerClaiming : MonoBehaviour
 {
     // betinglsene som skal for gjøer action
     public bool canClimb = false;
-    public bool isclimbing = false;
+    public bool isClimbing = false;
     [SerializeField] public float clibingSpeed = 5f;
 
     [SerializeField] GameObject Player;
 
     //referanse til playerControll med PlayerMovement skrifte
-    PlayerMovement playerAction;
-   
+    PlayerControls playerClimb;
+
+    //public event Action OnKlatreAction;
+
     private void Awake()
     {
-        playerAction = Player.GetComponent<PlayerMovement>();
-
+        playerClimb = new PlayerControls();
 
     }
 
 
     private void Start()
     {
-        //
-        playerAction.OnInteractAction.Klatre.performed += Climbing_Up;
-        Debug.Log()
+       
+       // playerClimb.OnKlatreAction.Klatre.performed += Climbing_Up;
+        
     }
 
 
@@ -42,10 +43,6 @@ public class PlayerClaiming : MonoBehaviour
 
 
         }
-        
-       
-
-        
     }
     
     //sopp når er oppe (canClimb)

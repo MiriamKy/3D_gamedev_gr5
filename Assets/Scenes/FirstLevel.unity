@@ -1327,8 +1327,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708636908}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 23d9c493c3641f147a3da8b42f3aeeee, type: 3}
+  m_Controller: {fileID: 9100000, guid: 03621c93c93590f4da4a761f11324741, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2868,7 +2868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2129977863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2882,9 +2882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canClimb: 0
-  isclimbing: 0
-  klatre: {fileID: -2789750588544515953, guid: 3369f2602f8690e4cb4507f9fb654e4f, type: 3}
-  cliingSpeed: 5
+  isClimbing: 0
+  clibingSpeed: 5
+  Player: {fileID: 0}
 --- !u!4 &2129977864
 Transform:
   m_ObjectHideFlags: 0
