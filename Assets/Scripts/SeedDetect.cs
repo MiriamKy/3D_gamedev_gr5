@@ -19,6 +19,7 @@ public class SeedDetect : MonoBehaviour
         if(detectClimbSeed)
         {
             GameManager.Instance.IncreaseClimbSeed(1);
+
             //Destroye seed-objektet
             //Husk å hente verdien/antallet der du trenger det, ved hjelp av denne linjen:
             //GameManager.Instance.CurrentClimbSeeds();
