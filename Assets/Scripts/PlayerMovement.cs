@@ -17,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 forward;
     Vector3 right;
 
+   //Deklarerer eventene for interactions og gardening // Heter det å deklarere??
     public event Action OnInteractAction;
+    public event Action OnGardeningAction;
 
     void Awake()
     {
@@ -39,15 +41,21 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        //Setter opp en lytter til et event
+        //Setter opp lyttere til eventene
         playerInput.Player.Interact.performed += Interact_performed;
-        //Debug.Log(GameManager.Instance.CurrentWaterSeeds());
+        playerInput.Player.Gardening.performed += Gardening_performed;
     }
 
     private void Interact_performed(InputAction.CallbackContext obj)
     {
         // Trigger den Action som ble laget legner opp og sjekker om noen lytter
         OnInteractAction?.Invoke();
+    }
+
+    private void Gardening_performed(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Gardening_performed in PlayerMovement");
+        OnGardeningAction?.Invoke();
     }
 
 
@@ -73,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Kobler på transform-komponentet for å kontrollere posisjonen til spilleren via input
         // Foreløpig raskeste løsning (kan bli behov for å legge til fysikk senere)
-        transform.Translate(movementVector * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * movementVector);
 
 
     }

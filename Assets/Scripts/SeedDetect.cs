@@ -14,15 +14,16 @@ public class SeedDetect : MonoBehaviour
         input.OnInteractAction += Input_OnInteractAction;
     }
 
+    // Metode: Hvis detectClimbSeed er true - kjør metode increaseClimbSeed, for å øke antallet climbSeeds.
+    // - Samme for WaterSeed
+    // Else - logg til konsollen
     private void Input_OnInteractAction()
     {
         if(detectClimbSeed)
         {
-            GameManager.Instance.IncreaseClimbSeed(1);
-
-            //Destroye seed-objektet
-            //Husk å hente verdien/antallet der du trenger det, ved hjelp av denne linjen:
-            //GameManager.Instance.CurrentClimbSeeds();
+            GameManager.Instance.AddClimbSeed();
+        } if (detectWaterSeed) {
+            GameManager.Instance.AddWaterSeed();
         } else
         {
             Debug.Log("Ikke legg til");

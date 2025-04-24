@@ -3,11 +3,11 @@ using UnityEngine.Rendering;
 
 public class Inventory : MonoBehaviour
 {
-    private int WaterSeedInventorySlot = 0;
+    /*private int WaterSeedInventorySlot = 0;*/
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         WaterSeedInventorySlot = GameManager.Instance.CurrentWaterSeeds();
-    }
+    }*/
 }

@@ -7,6 +7,8 @@ TagManager:
   - ClimbSeed
   - WaterSeed
   - BounceSeed
+  - Wet
+  - Dry
   layers:
   - Default
   - TransparentFX

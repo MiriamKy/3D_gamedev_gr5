@@ -16,18 +16,19 @@ public class GameManager : MonoBehaviour
     // Variabler til de ulike typene frø
     private int waterSeeds = 0;
     private int climbSeeds = 0;
+    private bool water = false;
 
     private void Awake()
     {
-        
-        if(Instance == null)
+
+        if (Instance == null)
         {
             Instance = this;
             // Gjøre gameObject tilgjengelig på tvers av scener
             DontDestroyOnLoad(gameObject);
         }
         else
-        { 
+        {
             // Når det opprettes nytt GameObject, skal det gamle umiddelbart ødelegges
             Destroy(gameObject);
         }
@@ -35,14 +36,34 @@ public class GameManager : MonoBehaviour
 
     // Disse metodene legger til frø i climbSeed osv.
     // Husk at det ikke skjer før du kaller metodene/
-    public void IncreaseClimbSeed(int amount)
+    public void AddClimbSeed()
     {
-        climbSeeds += amount;
+        climbSeeds++;
     }
 
-    public void IncreaseWaterSeed(int amount)
+    public void RemoveClimbSeed()
     {
-        waterSeeds += amount;
+        climbSeeds--;
+    }
+
+    public void AddWaterSeed()
+    {
+        waterSeeds ++;
+    }
+
+    public void RemoveWaterSeed()
+    {
+        waterSeeds--;
+    }
+
+    public void AddWater()
+    {
+        water = true;
+    }
+
+    public void RemoveWater()
+    {
+        water = false;
     }
 
     // Returnerer variablene for frø for å gjøre dem tilgjengelige overalt
@@ -54,5 +75,10 @@ public class GameManager : MonoBehaviour
     public int CurrentClimbSeeds()
     {
         return climbSeeds;
+    }
+
+    public bool CurrentWater()
+    {
+        return water;
     }
 }
