@@ -13,10 +13,6 @@ public class PlayerMovement : MonoBehaviour
     // staret med står i ro 
     private bool isWalking = false;
 
-    // Vektorer for bevegelsesretninger
-    Vector3 forward;
-    Vector3 right;
-
    //Deklarerer eventene for interactions og gardening // Heter det å deklarere??
     public event Action OnInteractAction;
     public event Action OnGardeningAction;
@@ -63,8 +59,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Henter input fra bruker, og konverterer dcen til 3 dimensjoner
-        Vector2 xyMove = playerInput.Player.Move.ReadValue<Vector2>();
-        Vector3 movementVector = new Vector3(xyMove.x, 0, xyMove.y);
+        Vector3 movementVector = playerInput.Player.Move.ReadValue<Vector3>();
 
         //for at careter få animasjon når den går
         if (movementVector == Vector3.zero)

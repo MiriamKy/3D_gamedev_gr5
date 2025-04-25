@@ -6,6 +6,8 @@ public class EarthDetect : MonoBehaviour
     [SerializeField] private bool detectDryEarth = false;
     [SerializeField] private bool detectWetEarth = false;
 
+    private GameObject otherGameObject = null;
+
 
     private PlayerMovement input;
 
@@ -25,6 +27,7 @@ public class EarthDetect : MonoBehaviour
         {
             detectWetEarth = true;
         }
+        otherGameObject = other.gameObject;
     }
 
     // Setter boolen til false når spilleren går ut av collideren
@@ -38,20 +41,33 @@ public class EarthDetect : MonoBehaviour
         {
             detectWetEarth = false;
         }
+        otherGameObject = null;
     }
 
     private void Input_OnGardeningAction()
     {
         if (detectDryEarth) // + vannkannen har vann i seg (lage en bool)
         {
-            // Endre tagen på jorda (earth) til "Wet"
-            // Kalle på metoden som fjerner vannet fra vannkannen i gameManager
+            if(otherGameObject != null)
+            {
+                otherGameObject.tag = "Wet";
+                Debug.Log("Tag chenged to Wet");
+                // Kalle på metoden som fjerner vannet fra vannkannen i gameManager
+                // Deaktivere DryEarthVisual
+                // Aktivere WetEarthVisual
+            }
+
         }
-        if (detectWetEarth) //
+        else if (detectWetEarth) //
         {
-            // Endre tagen på jorda til planted? Eller endre tagen direkte til den planten man planter med?
-            // Kalle på metoden som får den riktige planten til å vokse
-            // Kalle på metoden som fjerner frøet som ble brukt fra gameManager
+            if(otherGameObject != null)
+            {
+                // Endre tagen på jorda til planted eller null, kan endres senere
+                otherGameObject.tag = "Planted";
+                Debug.Log("Tag changed to Planted");
+                // Kalle på metoden som får den riktige planten til å vokse
+                // Kalle på metoden som fjerner frøet som ble brukt fra gameManager
+            }
         }
         else
         {
