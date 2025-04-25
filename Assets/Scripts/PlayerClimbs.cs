@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,24 +9,34 @@ public class PlayerClaiming : MonoBehaviour
     public bool isClimbing = false;
     [SerializeField] public float clibingSpeed = 5f;
 
-    [SerializeField] GameObject Player;
+   
 
     //referanse til playerControll med PlayerMovement skrifte
     PlayerControls playerClimb;
 
-    //public event Action OnKlatreAction;
+    public event Action OnInteractAction;
 
     private void Awake()
     {
         playerClimb = new PlayerControls();
 
     }
+    private void OnEnable()
+    {
+        playerClimb.Enable();
+
+    }
+    private void OnDisable()
+    {
+        playerClimb.Disable();
+    }
 
 
     private void Start()
     {
        
-       // playerClimb.OnKlatreAction.Klatre.performed += Climbing_Up;
+      playerClimb.Player.Klatre.performed += Climbing_Up;
+        Debug.Log("klare sktifte");
         
     }
 
@@ -33,19 +44,26 @@ public class PlayerClaiming : MonoBehaviour
     private void Climbing_Up(InputAction.CallbackContext obj)
     {
         //aktiver actiom 
+        Debug.Log("klarter");
+        OnInteractAction?.Invoke();
 
+        isClimbing = true;
         
+
+        Vector3 OppVector = new Vector3(0, 1, 0);
+
+
         if (canClimb == true)
         {
             //gå opp 
-
         
-
-
+        
         }
+        //sopp når er oppe (canClimb)
+
     }
     
-    //sopp når er oppe (canClimb)
+    
 
 
 

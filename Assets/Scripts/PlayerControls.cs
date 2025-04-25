@@ -47,9 +47,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Klatre"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""c8687423-43d0-4211-8ad4-b58714d9148d"",
-                    ""expectedControlType"": ""Vector3"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true

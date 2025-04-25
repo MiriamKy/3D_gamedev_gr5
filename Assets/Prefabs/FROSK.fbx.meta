@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: frost_farge
-    second: {fileID: 1891889971167480116, guid: 8b3034f414cd699449375541b0c99407, type: 3}
+    second: {fileID: 2100000, guid: 7fbff991819b66847b1226d877a6637e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__frost_farge
-    second: {fileID: 1891889971167480116, guid: 8b3034f414cd699449375541b0c99407, type: 3}
+    second: {fileID: 2100000, guid: 7fbff991819b66847b1226d877a6637e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

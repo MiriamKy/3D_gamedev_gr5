@@ -75,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
         // Foreløpig raskeste løsning (kan bli behov for å legge til fysikk senere)
         transform.Translate(movementVector * speed * Time.deltaTime);
 
+        //rotasjon cartae
+
 
     }
 

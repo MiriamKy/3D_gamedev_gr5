@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: frost_farge
-    second: {fileID: 1891889971167480116, guid: 3dea47cfc480f2c42b68866939611abb, type: 3}
+    second: {fileID: 2100000, guid: 7fbff991819b66847b1226d877a6637e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

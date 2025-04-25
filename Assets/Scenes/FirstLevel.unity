@@ -664,7 +664,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.118777595, y: -0.24999584, z: 0.030917097, w: 0.9604364}
-  m_LocalPosition: {x: 9.51, y: 5.84, z: -30.369999}
+  m_LocalPosition: {x: 9.51, y: 5.96, z: -30.369999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1490,6 +1490,7 @@ GameObject:
   - component: {fileID: 1149708498}
   - component: {fileID: 1149708499}
   - component: {fileID: 1149708500}
+  - component: {fileID: 1149708501}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1533,7 +1534,7 @@ Transform:
   m_GameObject: {fileID: 1149708494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15.37}
+  m_LocalPosition: {x: 0, y: 0.12, z: -15.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1606,6 +1607,21 @@ CapsuleCollider:
   m_Height: 2.669473
   m_Direction: 1
   m_Center: {x: -0.000037908554, y: 0.83473647, z: 0.11411345}
+--- !u!114 &1149708501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149708494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d91bfce104683c4dafeb7f2ad623c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canClimb: 0
+  isClimbing: 0
+  clibingSpeed: 5
 --- !u!1001 &1231091176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2414,7 +2430,7 @@ Transform:
   m_GameObject: {fileID: 1619966740}
   serializedVersion: 2
   m_LocalRotation: {x: 0.118777595, y: -0.24999584, z: 0.030917097, w: 0.9604364}
-  m_LocalPosition: {x: 9.51, y: 5.84, z: -30.369999}
+  m_LocalPosition: {x: 9.51, y: 5.96, z: -30.369999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2852,54 +2868,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a377e2ebc32e44d86c282eb23fc471, type: 3}
---- !u!1 &2129977862
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2129977864}
-  - component: {fileID: 2129977863}
-  m_Layer: 0
-  m_Name: Climbing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &2129977863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129977862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d91bfce104683c4dafeb7f2ad623c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canClimb: 0
-  isClimbing: 0
-  clibingSpeed: 5
-  Player: {fileID: 0}
---- !u!4 &2129977864
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129977862}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7812202633674784083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3056,4 +3024,3 @@ SceneRoots:
   - {fileID: 7812202633674784083}
   - {fileID: 1570556699}
   - {fileID: 1294658147}
-  - {fileID: 2129977864}
