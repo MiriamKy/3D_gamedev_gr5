@@ -14,6 +14,8 @@ public class PlayerClaiming : MonoBehaviour
     //referanse til playerControll med PlayerMovement skrifte
     PlayerControls playerClimb;
 
+    
+
     public event Action OnInteractAction;
 
     private void Awake()
@@ -47,23 +49,34 @@ public class PlayerClaiming : MonoBehaviour
         Debug.Log("klarter");
         OnInteractAction?.Invoke();
 
-        isClimbing = true;
         
 
-        Vector3 OppVector = new Vector3(0, 1, 0);
+    }
+
+    private void Update()
+    {
+        //isClimbing = true;
+
+
+
+        //Vector3 inputVector = new Vector3(0, 2, 0);
+        // Vector3 OppVector = 
+        
+        //Rotate(0, rotationSpeed, 0);
 
 
         if (canClimb == true)
         {
             //gå opp 
-        
-        
+
+
         }
         //sopp når er oppe (canClimb)
-
     }
-    
-    
+
+    //rtur canClimb
+
+
 
 
 
