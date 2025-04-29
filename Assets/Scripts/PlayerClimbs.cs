@@ -38,7 +38,7 @@ public class PlayerClaiming : MonoBehaviour
     {
        
       playerClimb.Player.Klatre.performed += Climbing_Up;
-        Debug.Log("klare sktifte");
+      // Debug.Log("klare sktifte");
         
     }
 
