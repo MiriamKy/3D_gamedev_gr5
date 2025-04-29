@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class playerAinmasjon : MonoBehaviour
+public class PlayerAin : MonoBehaviour
 {
-    
     [SerializeField] PlayerMovement player;
 
     private Animator animator;
@@ -23,7 +21,7 @@ public class playerAinmasjon : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
-        
-    }
 
+    }
+    
 }

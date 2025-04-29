@@ -13,7 +13,7 @@ public class PlayerClaiming : MonoBehaviour
 
     //referanse til playerControll med PlayerMovement skrifte
     PlayerControls playerClimb;
-
+    
     
 
     public event Action OnInteractAction;

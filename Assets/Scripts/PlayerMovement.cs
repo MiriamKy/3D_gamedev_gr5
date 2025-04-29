@@ -9,9 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
     // Definerer farten til spilleren
     [SerializeField] public float speed = 5f;
+    [SerializeField] public float rotationSpeed = 1f;
+
 
     // staret med står i ro 
     private bool isWalking = false;
+
 
 
     public event Action OnInteractAction;
@@ -52,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Henter input fra bruker, og konverterer dcen til 3 dimensjoner
-        Vector3 movementVector = playerInput.Player.Move.ReadValue<Vector3>();
+         Vector3 movementVector = playerInput.Player.Move.ReadValue<Vector3>();
+        if (movementVector.magnitude > rotationSpeed)
 
         //for at careter få animasjon når den går
         if (movementVector == Vector3.zero)
@@ -72,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(movementVector * speed * Time.deltaTime);
 
         //rotasjon cartae
+        transform.rotation = Quaternion.Euler(movementVector);
+
+        //transform.rotation = transform.rotation.Euler( movementVector);
 
 
     }
@@ -79,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsWalking()
     {
         return isWalking;
+
     }
 
 
