@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -54,9 +56,12 @@ public class PlayerMovement : MonoBehaviour
     // Sjekker om en tast trykkes og kaller Move-funksjonen hvis ja
     void Update()
     {
-        // Henter input fra bruker, og konverterer dcen til 3 dimensjoner
+        // Henter input fra bruker,og konverterer dcen til 3 dimensjoner
          Vector3 movementVector = playerInput.Player.Move.ReadValue<Vector3>();
-        if (movementVector.magnitude > rotationSpeed)
+         movementVector = new Vector3(movementVector.x, 0, movementVector.z);
+
+
+
 
         //for at careter få animasjon når den går
         if (movementVector == Vector3.zero)
@@ -76,10 +81,12 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(movementVector * speed * Time.deltaTime);
 
         //rotasjon cartae
-        transform.rotation = Quaternion.Euler(movementVector);
+        //transform.rotation = Quaternion.Euler(0, movementVector.y, 0 );
 
         //transform.rotation = transform.rotation.Euler( movementVector);
-
+       transform.forward = Vector3.Slerp(transform.forward, movementVector, rotationSpeed * Time.deltaTime);
+        // transform.rotation = Quaternion.RotateTowards(transform.rotation, movementVector, rotationSpeed * Time.deltaTime);
+        
 
     }
 
@@ -91,3 +98,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 }
+
+
+
+
+
