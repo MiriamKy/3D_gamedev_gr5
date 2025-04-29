@@ -320,7 +320,6 @@ GameObject:
   m_Component:
   - component: {fileID: 330585546}
   - component: {fileID: 330585545}
-  - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
   - component: {fileID: 330585549}
@@ -331,14 +330,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &330585544
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -346,7 +337,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -1785,7 +1776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599207894}
   - component: {fileID: 1599207896}
-  - component: {fileID: 1599207895}
+  - component: {fileID: 1599207897}
   m_Layer: 0
   m_Name: ClimbSeedSprite
   m_TagString: Untagged
@@ -1808,18 +1799,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 282053328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1599207895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1599207893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64aa3932af9da642a752f82f9fb50e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1599207896
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1875,6 +1854,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1599207897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599207893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64aa3932af9da642a752f82f9fb50e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1619966740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2001914596}
   - component: {fileID: 2001914598}
-  - component: {fileID: 2001914597}
+  - component: {fileID: 2001914599}
   m_Layer: 0
   m_Name: WaterSeedSprite
   m_TagString: Untagged
@@ -2216,18 +2207,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1038840425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2001914597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001914595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64aa3932af9da642a752f82f9fb50e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &2001914598
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2283,6 +2262,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2001914599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001914595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64aa3932af9da642a752f82f9fb50e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &24039911614993151
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2891,8 +2882,8 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1619966742}
   - {fileID: 330585546}
+  - {fileID: 1619966742}
   - {fileID: 410087041}
   - {fileID: 1149708497}
   - {fileID: 664228373}

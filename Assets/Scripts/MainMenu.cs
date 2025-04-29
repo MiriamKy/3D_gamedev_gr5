@@ -3,7 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     public void Play()
     {
         SceneManager.LoadScene("Game");
@@ -18,4 +22,8 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
