@@ -8,6 +8,7 @@ public class PlayerAin : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        GetComponent<Animator>().applyRootMotion = false;
     }
 
     private void Update()
